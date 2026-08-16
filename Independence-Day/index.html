@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independence day</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- OVERLAY AUTOPLAY FALLBACK -->
+<!-- OVERLAY AUTOPLAY & SWIPE TO START -->
+    <div id="start-overlay" class="fullscreen flex-center active bg-heroic">
+        <!-- Animasi Semangat Juang (Api/Percikan Perjuangan & Asap) -->
+        <div class="heroic-smoke"></div>
+        <div class="heroic-embers"></div>
+        
+        <div class="content-center z-index-content text-center w-100 px-20">
+            <h1 class="font-cinzel text-glow mb-10" style="font-size: 2.5rem; letter-spacing: 5px;">HUT RI KE-81</h1>
+            <p class="font-montserrat text-light mb-30" style="letter-spacing: 2px;">Nyalakan semangat kemerdekaan</p>
+            
+            <!-- Elemen Swipe -->
+            <div class="swipe-container mt-30">
+                <div class="swipe-track">
+                    <span class="swipe-text font-montserrat">Geser untuk Memulai</span>
+                    <div class="swipe-thumb flex-center" id="swipe-thumb">
+                        <span class="thumb-icon text-glow">🔥</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUDIO CONTROLS -->
+    <div id="audio-controller" class="hidden">
+        <span id="audio-label">Wonderful Indonesia</span>
+        <div class="equalizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <button id="btn-mute">🔊</button>
+    </div>
+
+    <!-- PHASE 1: INDEPENDENCE COUNTDOWN -->
+    <!-- PHASE 1: INDEPENDENCE COUNTDOWN (VIDEO BACKGROUND) -->
+    <section id="phase-1-countdown" class="fullscreen flex-center hidden">
+        
+        <!-- Video Latar Belakang -->
+        <video id="bg-video-countdown" class="bg-video" loop playsinline>
+            <source src="assets/video/independence-bg.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay gelap agar teks putih tetap terbaca -->
+        <div class="video-overlay"></div>
+
+        <div class="content-center z-index-content text-center">
+            <img src="assets/images/logo-hut-ri.png" alt="Logo HUT RI" class="logo-hut-ri" onerror="this.style.display='none'">
+            <h2 class="sub-title font-montserrat">REPUBLIK INDONESIA</h2>
+            <h1 class="main-title font-cinzel text-glow">81</h1>
+            <p class="wait-text font-montserrat">Menuju 17 Agustus 2026</p>
+            <div class="divider-ri"></div>
+            <p class="wait-text-2 font-playfair italic">"Indonesia Emas 2045"</p>
+            
+            <div class="countdown-container font-montserrat">
+                <div class="time-box"><span id="cd-days">00</span><small>HARI</small></div>
+                <div class="time-box"><span id="cd-hours">00</span><small>JAM</small></div>
+                <div class="time-box"><span id="cd-minutes">00</span><small>MENIT</small></div>
+                <div class="time-box"><span id="cd-seconds">00</span><small>DETIK</small></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PHASE 1.5: DRAMATIC COUNTDOWN (10 Seconds) -->
+    <section id="phase-dramatic" class="fullscreen flex-center hidden bg-dark">
+        <h1 id="dramatic-number" class="font-cinzel text-glow big-number">10</h1>
+    </section>
+
+    <!-- PHASE 1.75: CINEMATIC TRANSITION -->
+    <section id="phase-transition" class="fullscreen flex-center hidden bg-dark">
+        <div id="transition-text" class="font-playfair text-transition">
+            <!-- JavaScript will inject text here -->
+        </div>
+    </section>
+
+    <!-- PHASE 2: BIRTHDAY EXPERIENCE -->
+    <section id="phase-2-birthday" class="hidden bg-birthday">
+        <!-- Floating hearts & sparkles container -->
+        <div id="birthday-particles"></div>
+        <div id="hearts-container"></div>
+
+        <!-- Hero Section -->
+        <div class="hero-section min-vh-100 flex-center fade-in-scroll">
+            <div class="text-center">
+                <h1 class="font-playfair text-gold title-large">Happy 24th Birthday,<br>Meya ❤️</h1>
+                <p class="font-montserrat text-light mt-20">Hari ini dunia merayakan kemerdekaan Indonesia.</p>
+                <p class="font-montserrat text-light">Tapi aku punya satu alasan lain untuk merayakan 17 Agustus.</p>
+                <p class="font-montserrat text-light mt-10 fw-500">Karena kamu lahir di hari ini.</p>
+                <button id="btn-scroll-down" class="btn-romantic mt-30">Mulai Kejutan ❤️</button>
+            </div>
+        </div>
+
+        <!-- Birthday Message -->
+        <div class="message-section min-vh-100 flex-center fade-in-scroll">
+            <div class="glass-card text-center">
+                <h2 class="font-playfair text-gold mb-20">Untuk Meya, di usia 24 tahun...</h2>
+                <div class="message-body font-montserrat text-light text-typing">
+                    <p>Selamat ulang tahun, Meya.</p>
+                    <p>Hari ini bukan cuma tentang bertambahnya satu angka dalam perjalanan hidupmu.</p>
+                    <p>Hari ini adalah tentang merayakan seseorang yang sudah berjalan sejauh ini. Seseorang yang telah melewati begitu banyak cerita, tawa, air mata, perjuangan, dan perjalanan hingga akhirnya sampai di usia 24 tahun.</p>
+                    <p>Semoga di usia yang baru ini, semakin banyak hal baik yang datang kepadamu. Semoga langkahmu selalu dipertemukan dengan orang-orang baik, kesempatan-kesempatan indah, dan alasan-alasan baru untuk tersenyum.</p>
+                    <p>Semoga hal-hal yang selama ini kamu semogakan perlahan menemukan jalannya untuk menjadi nyata.</p>
+                    <p>Semoga kamu selalu diberikan kesehatan, kebahagiaan, ketenangan, dan keberanian untuk mengejar apa pun yang kamu inginkan.</p>
+                    <p>Dan semoga kamu selalu ingat...</p>
+                    <p class="text-gold fw-600">kamu adalah seseorang yang layak untuk dicintai, dihargai, dan dirayakan.</p>
+                    <p class="mt-20">Happy 24th Birthday, Meya.</p>
+                    <p>Semoga usia 24 menjadi salah satu chapter terbaik dalam hidupmu. ❤️</p>
+                    <p class="text-gold fw-700">JANGAN LUPA UNTUK LEBIH RAJIN BERIBADAH, SERING BERTAUBAT, DAN JANGAN SERING BERSEDIH.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo Album -->
+        <div class="album-section min-vh-100 flex-center fade-in-scroll flex-col">
+            <h2 class="font-playfair text-gold text-center mb-10">Little Pieces of Meya</h2>
+            <p class="font-montserrat text-light text-center mb-30">Beberapa kenangan yang layak untuk disimpan lebih lama.</p>
+            <div id="photo-gallery" class="gallery-container">
+                <!-- JS will inject photos here -->
+            </div>
+        </div>
+
+        <!-- Birthday Cake -->
+        <div class="cake-section min-vh-100 flex-center fade-in-scroll flex-col">
+            <h2 class="font-playfair text-gold text-center mb-10">But first...</h2>
+            <p class="font-montserrat text-light text-center mb-30">Make a wish, Meya.</p>
+            
+            <div class="cake-wrapper">
+                <div id="candles-container" class="candles-container">
+                    <!-- 24 Candles generated by JS -->
+                </div>
+                <div class="cake">
+                    <div class="cake-top"></div>
+                    <div class="cake-middle"></div>
+                    <div class="cake-bottom"></div>
+                </div>
+            </div>
+
+            <p class="font-montserrat text-light text-center mt-30">24 candles for 24 beautiful years.</p>
+            <p class="font-playfair text-gold text-center mt-10 text-large">Tiup lilinnya 🎂</p>
+            
+            <button id="btn-blow-fallback" class="btn-romantic mt-20">Tiup Lilin ✨</button>
+            <p id="mic-status" class="font-montserrat mt-10 text-small text-muted">Atau tiup ke arah microphone-mu 🌬️</p>
+        </div>
+    </section>
+
+    <!-- PHASE 3: VIDEO SURPRISE -->
+    <section id="phase-3-video" class="fullscreen flex-center hidden bg-dark">
+        <div id="video-intro" class="text-center transition-text absolute-center text-light font-playfair">
+            <!-- Text injected by JS -->
+        </div>
+        
+        <div id="video-container" class="hidden glass-card p-10 video-wrapper">
+            <video id="birthday-video" playsinline controlslist="nodownload">
+                <source src="" type="video/mp4">
+            </video>
+            <button id="btn-play-video" class="btn-romantic hidden absolute-center">Buka Pesan Terakhir ❤️</button>
+        </div>
+    </section>
+
+    <!-- PHASE 4: FINAL REVEAL -->
+    <section id="phase-4-final" class="fullscreen flex-center hidden bg-birthday">
+        <div class="text-center final-content">
+            <h2 class="font-playfair text-gold text-fade">Thank you for being you.</h2>
+            <h1 class="font-playfair text-gold title-large mt-10 text-fade delay-1">Happy 24th Birthday,<br>Meya ❤️</h1>
+            
+            <div class="final-photo-wrapper mt-30 text-fade delay-2">
+                <img id="final-photo" src="" alt="Meya">
+            </div>
+
+            <p class="font-montserrat text-light mt-30 text-fade delay-3">Semoga semua hal baik selalu menemukan jalan menuju kamu.</p>
+            <p class="font-playfair text-gold mt-10 italic text-fade delay-4">See you in the next chapter. ❤️</p>
+        </div>
+    </section>
+
+    <!-- Lightbox for Photo Album -->
+    <div id="lightbox" class="hidden">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Zoomed Image">
+        <p id="lightbox-caption" class="font-playfair"></p>
+    </div>
+
+    <!-- Audios -->
+    <audio id="audio-birthday" src="birthday-song.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
