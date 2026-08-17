@@ -5,7 +5,7 @@ const birthdayConfig = {
     name: "Mellyani Indah Agustinna",
     nickname: "Meya",
     age: 24,
-    targetDate: "2026-08-17T00:00:00+07:00",
+    targetDate: "2027-08-17T00:00:00+07:00",
     music: {
         // Lagu kemerdekaan sudah tidak dipakai di sini karena pakai Video
         birthday: "assets/music/birthday-song.mp3"
